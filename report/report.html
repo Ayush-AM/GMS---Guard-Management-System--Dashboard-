@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Reports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #007bff, #63a4ff);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 20px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 500px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .reports-section {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .report-card {
+            background: #fff;
+            color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .report-card h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .report-card p {
+            margin: 5px 0;
+        }
+
+        .report-card .time {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Reports</h1>
+        <form id="reportForm">
+            <input type="text" id="guardName" placeholder="Guard's Name" required>
+            <select id="location" required>
+                <option value="" disabled selected>Location</option>
+                <option value="Main Gate">Main Gate</option>
+                <option value="Library">Library</option>
+                <option value="Hostel">Hostel</option>
+                <option value="Canteen">Canteen</option>
+                <option value="Sports Ground">Sports Ground</option>
+            </select>
+            <textarea id="workDetails" rows="4" placeholder="Details of daily work" required></textarea>
+            <textarea id="complaints" rows="3" placeholder="Any complaints or issues" required></textarea>
+            <button type="button" onclick="submitReport()">Submit Report</button>
+        </form>
+
+        <div class="reports-section" id="reportsSection">
+            <h2>Submitted Reports</h2>
+        </div>
+    </div>
+
+    <script>
+        function submitReport() {
+            const guardName = document.getElementById("guardName").value;
+            const location = document.getElementById("location").value;
+            const workDetails = document.getElementById("workDetails").value;
+            const complaints = document.getElementById("complaints").value;
+
+            if (guardName && location && workDetails && complaints) {
+                const reportsSection = document.getElementById("reportsSection");
+
+                const reportCard = document.createElement("div");
+                reportCard.className = "report-card";
+
+                reportCard.innerHTML = `
+                    <h3>Guard: ${guardName}</h3>
+                    <p><strong>Location:</strong> ${location}</p>
+                    <p><strong>Work Details:</strong> ${workDetails}</p>
+                    <p><strong>Complaints:</strong> ${complaints}</p>
+                    <p class="time"><strong>Submitted at:</strong> ${new Date().toLocaleString()}</p>
+                `;
+
+                reportsSection.appendChild(reportCard);
+
+                document.getElementById("reportForm").reset();
+                alert("Report submitted successfully!");
+            } else {
+                alert("Please fill out all fields!");
+            }
+        }
+    </script>
+</body>
+</html>
