@@ -324,7 +324,7 @@ main .insights svg circle{
   stroke-width: 5;
 }
 
-main .insights .sales svg circle{
+main .insights .duty svg circle{
   stroke-dashoffset: 10;
   stroke-dasharray: 150;
 }
@@ -351,15 +351,15 @@ main .insights .progress .number{
 
 }
 
-maiin .recent_order{
+maiin .recent{
   margin-top: 2rem;
 }
 
-main .recent_order h2{
+main .recent h2{
   color: var(--clr-dark);
 }
 
-main .recent_order table{
+main .recent table{
   background-color: var(--clr-white);
   width: 100%;
   border-radius: var(--card-border-radius);
@@ -369,7 +369,7 @@ main .recent_order table{
   transition: all .3s ease;
 }
 
-main .recent_order table:hover{
+main .recent table:hover{
   box-shadow: none;
 }
 
@@ -389,7 +389,7 @@ main table tbody tr:last-child td{
   border: none;
 }
 
-main .recent_order a{
+main .recent a{
   text-align: center;
   display: block;
   margin: 1rem;
@@ -482,13 +482,13 @@ Right Side
 
 /* see analytics */
 
-.right .sales-analytics{
+.right .duty-analytics{
   margin-top: 2rem;
 }
-.right .sales-analytics h2{
+.right .duty-analytics h2{
   margin-bottom: 0.8rem;
 }
-.right .sales-analytics .item{
+.right .duty-analytics .item{
   background-color: var(--clr-white);
   display: flex;
   justify-content: space-between;
@@ -501,11 +501,11 @@ Right Side
   border-radius: var(--border-radius-3);
   box-shadow: var(--box-shadow);
 }
-.right .sales-analytics .item:hover{
+.right .duty-analytics .item:hover{
   box-shadow: none;
 }
 
-.right .sales-analytics .item .icon{
+.right .duty-analytics .item .icon{
   padding: 0.6rem;
   color: var(--clr-white);
   border-radius: 50%;
@@ -515,21 +515,21 @@ Right Side
   align-items: center;
   background: coral;
 }
-.right .sales-analytics .item:nth-child(3) .icon
+.right .duty-analytics .item:nth-child(3) .icon
 {
   background: var(--clr-success);
 }
-.right .sales-analytics .item:nth-child(4) .icon
+.right .duty-analytics .item:nth-child(4) .icon
 {
   background: var(--clr-danger);
 }
 
-.right .sales-analytics .item .right{
+.right .duty-analytics .item .right{
   margin-left: 15px;
   display: flex;
   justify-content: space-around;
 }
-.right .sales-analytics .item .right h3{
+.right .duty-analytics .item .right h3{
   color: var(d);
 }
 
@@ -648,7 +648,7 @@ MEDIA QUERY PHONE
   gap: 1.6rem;
   padding: 40px;
  }
- main .recent_order{
+ main .recent{
   padding: 30px;
   margin: 0 auto;
  }
@@ -678,13 +678,13 @@ MEDIA QUERY PHONE
      left: 1rem;
 
    }
-   .right .recent_order{
+   .right .recent{
     padding: 0 30px;
    }
    .right .recent_updates{
     padding: 0 40px;
    }
-   .right .sales-analytics{
+   .right .duty-analytics{
     padding: 0 40px;
    }
    .right .add_product{
