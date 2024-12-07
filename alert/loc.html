@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geolocation Example</title>
+  <style>
+    .geo-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .showDetails {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <button class="geo-btn">Show User Location</button>
+  <p class="showDetails">User Location details</p>
+
+  <script>
+    document.querySelector(".geo-btn").addEventListener("click", () => {
+      const showDetails = document.querySelector(".showDetails");
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            showDetails.textContent = `The latitude is ${latitude} & longitude is ${longitude}`;
+          },
+          (error) => {
+            showDetails.textContent = `Error: ${error.message}`;
+            console.error(error.message);
+          }
+        );
+      } else {
+        showDetails.textContent = "Geolocation is not supported by this browser.";
+      }
+    });
+  </script>
+</body>
+</html>
