@@ -5,15 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Geolocation Example</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: #333;
+    }
+
     .geo-btn {
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: #007bff;
+      border: none;
+      border-radius: 25px;
       cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    .geo-btn:hover {
+      background: #0056b3;
+      transform: scale(1.1);
+    }
+
+    .geo-btn:active {
+      transform: scale(1);
+      background: #003d80;
     }
 
     .showDetails {
       margin-top: 20px;
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      text-align: center;
     }
   </style>
 </head>

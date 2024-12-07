@@ -1,9 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff4d4d, #ff9999);
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #e50f0f, #f20707);
     color: #fff;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .container {
@@ -11,18 +15,26 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    color: #fdfdfd;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 form {
@@ -35,25 +47,43 @@ form {
 
 input, select, textarea, button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
+    box-sizing: border-box;
 }
 
 input, select, textarea {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
     color: #333;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    transform: scale(1.05);
+    outline: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 button {
-    background: #333;
+    background:rgb(18, 0, 0);
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background: #555;
+    background: #e33b3b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
